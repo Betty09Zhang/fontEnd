@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#map{
+				width: 800px;
+				height: 800px;
+				background-color: black;
+				position: relative;
+				
+			}
+			#energy{
+				width:20px;
+				height: 20px;
+				background-color: green;
+				position: absolute;
+				top:780px;
+				left: 30px;
+			}
+		</style>
+		
+		
+	</head>
+	<body>
+		<div id="map">
+			<div id="energy">
+			
+			</div>
+		</div>
+	
+	<script src="common.js"></script>
+	<script>
+			//生成随机数对象，全局使用
+			(function(win){
+				
+				function CreatRandom(){
+					
+				}
+				
+				CreatRandom.prototype.randomNum=function(){
+					return Math.floor(Math.random()*780);
+				}
+				win.random=new CreatRandom();
+			})(window);
+			console.log(random.randomNum());
+			function ChangeForm(map,energy,json){
+				this.map=map;
+				this.energy=energy;
+				this.json=json;
+			}
+			ChangeForm.prototype.init=function(){
+				for(var i in this.json){
+					this.energy.style[i]=this.json[i];
+				}
+					
+			}
+			var json={"top":random.randomNum()+"px","left":random.randomNum()+"px"};
+			var myJson=JSON.stringify(json, null, 2);
+			console.log(myJson);
+			var form=new ChangeForm(my$("map"),my$("energy"),json);
+			form.init();
+		</script>
+	</body>
+</html>

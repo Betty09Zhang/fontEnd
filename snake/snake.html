@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="food.js"></script>
+		<script src="snake.js"></script>
+		<script src="game.js"></script>
+		
+		<style>
+			.map{
+				width: 800px;
+				height: 800px;
+				background-color: black;
+				position: relative;
+			}
+		</style>
+		
+		
+	</head>
+	<body>
+		<div class="map">
+			
+		</div>
+		
+		<script>
+			var game=new Game(document.querySelector(".map"));
+			game.init();
+		</script>
+		
+	</body>
+</html>

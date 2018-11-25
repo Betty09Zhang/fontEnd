@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div{
+				background-color: yellow;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+		
+	
+		
+	</head>
+	<body>
+	
+		<input type="button" name="button" id="but" value="显示效果" />
+		<div id="div"></div>
+		
+		
+		<script>
+			function Person(age,name){
+				this.name=name;
+				this.age=age;
+			};
+//			字面量方式
+			Person.prototype={  
+//				手动修改构造器的指向
+				constructor:Person,
+				height:"180",
+				eat:function(){
+					console.log("xjbskdv");
+				}
+			};
+			var s=new  Person("10","Maik");
+			s.eat();
+//			输出内存地址
+			console.dir(Person);
+			console.dir(s);
+			
+			
+					
+		</script>
+	</body>
+</html>

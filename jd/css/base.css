@@ -1,0 +1,689 @@
+/* 头部 和底部样式网页公有  放在base*/
+
+/* 版心  宽度  居中对齐*/
+.w {
+	width: 1190px;
+	height: 140px;
+	margin: 0 auto;
+}
+
+body {
+	background-color: #F0F3EF;
+}
+
+.clearfix:before,.clearfix:after {
+content:" ";
+display:table;
+
+}
+
+.clearfix:after {
+clear:both;
+}
+
+.clearfix {
+
+    *zoom:1;  
+
+}
+
+/* 左浮动 */
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+/* 京东头部 */
+.J_headbar {
+	width: 100%;
+	height: 80px;
+	background-color: #9a4bbb;
+	position: relative;
+}
+
+.J_headbar>div>a {
+
+	/* 若不要width,在display:inline-block背景不显示 */
+	width: 1190px;
+	/* 后面有一大背景，所有给了高 */
+	height:80px ;
+	/* a 为行级元素，为了居中显示，转换为块级 */
+	display: inline-block;
+	/* line-height: 80px; */
+	margin: 0 auto;
+	background: url(../image/headBG.jpg) no-repeat;
+	position: relative;
+
+
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?q7a1t3');
+  src:  url('../fonts/icomoon.eot?q7a1t3#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?q7a1t3') format('truetype'),
+    url('../fonts/icomoon.woff?q7a1t3') format('woff'),
+    url('../fonts/icomoon.svg?q7a1t3#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+div.w {
+	position: relative;
+}
+.J_headul { 
+	 /* width: 300px; */
+	/* height: 46px; */ 
+	list-style: none;
+	position: absolute;
+	
+	/* display: inline-block; */
+
+	left: 740px;
+	top: 10px;
+
+}
+
+.J_headul li {
+	float: left;
+	width: 116px;
+	height: 84px;
+	margin-right: 10px;
+}
+
+/* 给定关闭图标宽高和背景 */
+ .J_headbar a i{
+	width: 10px;
+	height: 10px; 
+	
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-style: normal;
+	font-family: "icomoon";
+	font-size: 10px;
+	color: gray;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+*{
+	margin: 0;
+	padding: 0
+}
+
+.shortcut {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	background-color: #E3E4E5;
+	border: 1px solid #DDDDDD;
+
+}
+.shortcut li {
+	list-style: none;
+	color: #C6C7C7;
+}
+
+.right li {
+	display: inline-block;
+	margin-left: 5px;
+}
+.shortcut i{
+	font-family: "icomoon";
+	font-size: 15px;
+	
+	font-style: normal;
+}
+
+.left {
+	margin-left: 260px;
+	overflow: hidden;
+}
+.left i{
+	color: red;
+}
+
+.shortcut a {
+	text-decoration: none;
+	color:  #B9B9BA;
+}
+
+.shortcut a:hover{
+	color: red;
+}
+.shortcut li span>a{
+	color: red;
+}
+
+/* 导航栏小短线 */
+.space {
+	width: 1px;
+	height: 10px;
+	background-color: red;
+
+	/* margin: 10px 15px; */
+}
+.mobile {
+	position: relative;
+}
+.mobile_jd img{
+	position: absolute;
+	right: 0;
+	top: 30px;
+	border: 1px solid #CFCFCF;
+	padding: 2px;
+}
+
+/* .header{
+	position: relative;
+} */
+.logo h1{
+	margin: 0;
+}
+
+.logo {
+	width: 190px;
+	height: 170px;
+	position: absolute;
+	background-color: blue;
+	top: -31px;
+	left: 0;
+}
+
+.logo a{
+	width: 190px;
+	height: 170px;
+	background: url(../image/logo.gif) no-repeat;
+
+	 /* 把行内元素转化为行内块元素，才可以显示背景图片 */
+	 display: block;
+	 text-indent: -9999px;
+
+}
+
+input,button{
+	padding: 0;
+	border: 0;
+
+}
+
+.search {
+	width: 550px;
+	height: 35px;
+	background-color: purple;
+	/* margin-left: 130px; */
+	position: absolute;
+	left: 320px;
+	top: 25px;
+}
+.search input{
+	width: 495px;
+	height: 35px;
+	padding-left: 5px;  /* 会撑大盒子5px，变成505px */
+	color: #989898;
+	outline: none;  /* 点击输入框去蓝色边框 */
+	float: left;
+}
+
+
+/* button给大小之后，会有默认的边框，因此要清除样式 */
+
+.search button {
+	width: 50px;
+	height: 35px;
+	background-color: #F10215;
+	cursor: pointer;
+	font-family: 'icomoon';
+	font-style: normal;
+	float: left;
+}
+
+
+/* 输入框相机   标签元素绝对定位后 有隐式转换给行内块元素，可直接给宽高*/
+.search em{
+	width: 19px;
+	height: 15px;
+	background: url(../image/sprite-search.png) no-repeat;
+	/* background-color: purple; */
+	cursor: pointer;
+	
+	position: absolute;
+	top: 9px;
+	right: 65px;
+
+}
+
+/* 鼠标放在相机上后会切换背景图片 为红色 在精灵图中定位*/
+.search em:hover {
+	background-position: -30px 0;
+}
+
+.hotwords {
+	width: 550px;
+	height: 20px;
+	line-height: 20px;
+	position: absolute;
+	left: 320px;
+	top: 60px;
+	overflow: hidden;
+	margin-top: 8px;
+}
+
+.hotwords a {
+	text-decoration: none;
+	color: #999999;
+	float: left;
+	margin-right: 18px;
+
+}
+
+.hotwords a:hover {
+	
+	color: red;
+}
+
+.navitems {
+	width: 790px;
+	height: 35px;
+	line-height: 35px;
+	
+	/* background-color: purple; */
+	
+	position: absolute;
+	bottom: 0;
+	left: 200px;
+	 
+}
+
+.navitems li {
+	list-style: none;
+	float: left;
+	margin-left: 30px;
+}
+
+.navitems ul {
+    float: left;
+}
+
+.navitems .space{
+	
+	float: left;
+	
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-right: -10px; 
+}
+
+.navitems a {
+	text-decoration: none;
+    font-size: 14px;
+	color: #333333;
+}
+.navitems a:hover{
+ color: red;
+}
+
+.myCar {
+	width: 190px;
+	height: 33px;
+	border: 1px solid  #E3E4E5;
+	background-color: #FFFFFF;
+	position: absolute;
+	top: 25px;
+	right: 100px;
+	line-height: 33px;
+	text-align: center;
+}
+
+.myCar a{
+	text-decoration: none;
+	
+
+
+}
+.car_logo{
+	font-family: 'icomoon';
+	font-style: normal;
+	color: red;
+	margin-right: 3px;
+}
+
+.num{
+	color: white;
+	border-radius: 8px;
+	background-color:red;
+	height: 16px;             /* 重新设置行高和高，覆盖之前父盒子的行高 */
+	line-height: 16px; 
+	position: absolute;
+	font-size: 12px;
+	top: 6px;
+	right:40px;
+	padding: 0 3px;          
+	font-style: normal;
+}
+
+.footer{
+	width: 100%;
+	height: 590px;
+}
+.footer_service {
+	padding: 30px 0;
+	/* background-color: purple; */
+	width: 1190px;
+	margin: 0 auto;
+	border-bottom: 1px solid #DEDEDE;
+
+}
+.footer_service li {
+	width: 297px;
+	height: 42px;
+	list-style: none;
+	float: left;
+}
+
+/* 块级元素，想让其一行排列，内部元素浮动即可 */
+.footer_service p,h5 {
+	 font-size: 20px;
+	 color: #444444;
+	 font-weight: 700;
+	 float: left;
+}
+.footer_service h5{
+	width: 36px;
+	height: 42px; 
+	margin-right: 7px;
+
+}
+.mod_service_init {
+	width: 225px;
+	height: 42px;
+	line-height: 42px;
+	margin: 0 auto;
+
+}
+
+.mod_service_tit {
+	overflow: hidden;
+	text-indent: -9999px;
+}
+
+.word1 {
+	
+	background: url('../image/ico.png') no-repeat 0 0;
+	
+}
+
+.word2 {
+	background: url('../image/ico.png') no-repeat 0 -42px;
+	
+}
+.word3 {
+	background: url('../image/ico.png') no-repeat  0 -84px;
+	
+}
+
+.word4 {
+	background: url('../image/ico.png') no-repeat 0 -126px;
+	
+}
+
+.footer_help {
+	height: 200px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	/* background-color: purple; */
+	border-bottom:  1px solid #DEDEDE;
+
+}
+
+.buy_help {
+	width: 158px;
+	float: left;
+
+	
+}
+
+.buy_help dt{
+	height: 30px; 
+	font-weight: 700;
+}
+.buy_help dd {
+	height: 25px;
+}
+
+a,p{
+	font-size: 12px;
+	text-decoration: none;
+	color: #666666;
+}
+
+a:hover {
+	color: red;
+}
+
+.help_area {
+
+	float: right;
+	padding-right: 10px;
+	
+
+}
+.help_map {
+	width: 200px;
+	height: 150px;
+	background: url('../image/ico_footer.png')no-repeat;
+	background-position: 0 0;
+
+}
+.help_area h6{
+	height: 35px;
+	font-size: 16px;
+}
+
+
+.help_area a {
+	float: right;
+}
+
+.copy_detail {
+	text-align: center;
+}
+
+span.op {
+	margin-right: 6px;
+	margin-left: 6px;
+}
+.copy_middle{
+	text-align: center;
+	line-height: 24px;
+	margin-top: 10px;
+	color: #A4BFDE;
+}
+
+.global_ico{
+	display: block;
+}
+.copy_middle p i {
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	background: url('../image/footer.png') no-repeat -80px -86px;
+	/* position: -80px -86px; */
+	margin-right: 10px;
+}
+
+.credit {
+	text-align: center;
+	
+	margin-top: 35px;
+	color: #666666;
+}
+p.credit a {
+	width: 103px;
+	height: 32px;
+	display: inline-block;
+	background: url('../image/ico_footer.png') no-repeat 0px -218px;
+	/* background-color: purple; */
+	
+}
+
+.credit a.credit_judge{
+	background: url('../image/ico_footer.png') no-repeat 0px -152px;
+}
+.credit a.credit_notify{
+	background: url('../image/ico_footer.png') no-repeat 0px -183px;
+}
+.credit a.credit_tips{
+	background-position: -104px -152px;
+}
+.credit a.credit_download{
+	background-position: -104px -218px;
+}
+
+
+/* Main 部分开始*/
+.JD_main {
+	height: 480px;
+	background-color: purple;
+	position: relative;
+}
+
+.main {
+	height: 480px;
+	background-color: red;
+	/* background: url('../image/bg.png') top center; */
+	position: absolute;
+	z-index: 1;
+	
+}
+
+.ad {
+	height: 480px;
+	background: url('../image/bg.png') no-repeat top center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/* position定位后  自动转化为行内块元素,大小根据内容而定，所以转后给定一个宽度，要不然无法显示 */
+	width: 100%;
+}
+.ad a{
+	width: 100%;
+	height: 100%;
+	display: block;
+
+}
+.main_left {
+	width: 190px;
+	height: 480px;
+	background-color: white;
+	font-size: 16px;
+	float: left;
+}
+.main_center {
+	width: 790px;
+	height: 480px;
+	margin: 0 10px;
+	background-color: black;
+	float: left;
+}
+.main_right{
+	width: 190px;
+	height: 480px;
+	background-color: green;
+	float: right;
+}
+.main_left li {
+	margin-left: 10px;
+	line-height: 26px;
+	height: 26px;
+	list-style: none;
+
+}
+.main_left li:hover {
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.main_center_top {
+	height: 340px;
+	width: 100%;
+	background: url('../image/banner.jpg');
+	position: relative;
+}
+.main_center_bottom {
+	margin-top: 10px;
+}
+.main_center_bottom div{
+	height: 130px;
+	width: 390px;
+	float: left;
+}
+.main_center_bottom img{
+	width: 100%;
+}
+div.main_center_right {
+	float: right;
+}
+
+/* 轮播图 */
+
+.main_center_top {
+	position: relative;
+
+}
+.main_center_top a{
+	width: 25px;
+	height: 60px;
+	background: rgba(255, 255, 255, 0.3);
+	line-height: 60px;
+	/* 水平居中 */
+	text-align: center; 
+	/* 垂直居中 */
+
+}
+
+.arrow_left{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin-top: -10px;
+}
+.arrow_right {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -10px;
+}
+.main_center_top i{
+	font-family: 'icomoon';
+	font-size: 25px;
+	font-style: normal;
+	color: white;
+	font-weight: 400;
+	margin-top: 10px;
+	
+}
+
+.circle_big {
+	height: 20px;
+	/* width: 180px; */
+	position: absolute;
+	left: 50%;
+	margin-left: -90px;
+	bottom: 20px;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	
+
+}
+.circle_big li{
+	list-style: none;
+	width: 10px;
+	height: 10px;
+	background-color: white;
+	border-radius: 50%;
+	display: inline-block;
+	margin: 0 5px;
+	
+}

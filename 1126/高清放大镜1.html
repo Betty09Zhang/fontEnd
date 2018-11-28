@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>哈哈</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 350px;
+      height: 350px;
+      margin: 100px;
+      border: 1px solid #ccc;
+      position: relative;
+    }
+
+    .big {
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      top: 0;
+      left: 360px;
+      border: 1px solid #ccc;
+      overflow: hidden;
+      display: none;
+    }
+
+    .mask {
+      width: 175px;
+      height: 175px;
+      background: rgba(255, 255, 0, 0.4);
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      cursor: move;
+      display: none;
+    }
+
+    .small {
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+<div class="box" id="box">
+  <div class="small"><!--小层-->
+    <img src="images/small.png" width="350" alt=""/>
+    <div class="mask"></div><!--遮挡层-->
+  </div><!--小图-->
+  <div class="big"><!--大层-->
+    <img src="images/big.jpg"  alt=""/><!--大图-->
+  </div><!--大图-->
+</div>
+<!--导入外部的js文件-->
+<script src="common.js"></script>
+<script>
+
+  //获取需要的元素
+  var box = my$("box");
+  //获取小图的div
+  var small = box.children[0];
+  //遮挡层
+  var mask = small.children[1];
+  //获取大图的div
+  var big = box.children[1];
+  //获取大图
+  var bigImg = big.children[0];
+
+  //放大镜效果，由两张图片构成，一张小图和一张超大图
+  
+  //鼠标进入，显示mask,跟随光标移动，光标在mask 中心区域，mask 显示在小图中
+  	small.onmouseover=function(e){
+  	mask.style.display="block";
+  	big.style.display="block";
+  	var x=e.clientX;
+  	var y=e.clientY;
+  	//鼠标距离 小图左边距给mask
+ 		
+// 		var marginLeftBox=parseInt(getStyle(box,"marginLeft"));
+// 		var marginTopBox=parseInt(getStyle(box,"marginTop"));
+			var left=x-100 -parseInt(mask.offsetWidth/2);
+			var top=y-100-parseInt(mask.offsetHeight/2);
+    	
+    
+    //限定mask 的移动范围；
+    var ss=small.offsetWidth-mask.offsetWidth;
+    var st=small.offsetHeight-mask.offsetHeight;
+    left=left<=0?0:(left>ss)?ss:left;
+     top=top<=0?0:(top>st)?st:top;
+   	
+    mask.style.left=left+"px";
+    mask.style.top= top+"px";
+    
+    //mask 的移动距离与大图显示
+    // mask 的移动距离/大图的移动距离=mask 移动的最大跨度/大图移动的最大跨度
+    var maxX=bigImg.offsetWidth-big.offsetWidth;
+    var maxY=bigImg.offsetHeight-big.offsetHeight;
+    var bleft=left*maxX/(small.offsetWidth-mask.offsetWidth);
+    var btop=top*maxY/(small.offsetHeight-mask.offsetHeight);
+    
+    //top .left 是设置脱标之后的距离父盒子的边距值，marginLeft 是设置标准流的边距值。
+    bigImg.style.marginLeft=-bleft+"px";
+    bigImg.style.marginTop=-btop+"px";
+   
+  	
+  }
+</script>
+
+
+</body>
+</html>

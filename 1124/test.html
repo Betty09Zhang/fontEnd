@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				width: 1000px;
+				height: 200px;
+				list-style: none;
+				border: 1px solid black;
+				
+			}
+			li{
+				width: 250px;
+				height: 200px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li style="background-image: url(images/1.jpg);"></li>
+			<li style="background-image: url(images/2.jpg);"></li>
+			<li style="background-image: url(images/3.jpg);"></li>
+			<li style="background-image: url(images/4.jpg);"></li>
+		</ul>
+		<script>
+			var arr=[10,20,30];
+			//arr.shift();
+			arr.push(90);
+			for(var i in arr){
+				console.log(arr[i]);
+			}
+		</script>
+	</body>
+</html>

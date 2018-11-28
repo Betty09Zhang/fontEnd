@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function callIt(fn) {
+    var arr=[];
+    console.log(typeof arguments);
+    if(arguments.length>0){
+       for(var i=1;i<arguments.length;i++){
+       		arr.push(arguments[i]);
+       }
+       return fn.apply(null,arr);
+     }
+   
+   }
+
+		
+//		function callIt(fn) {
+//		var args=[];
+//		for(var i=1;i<arguments.length;i++)
+//			args.push(arguments[i]);
+//		var result=fn.apply(null,args);
+//		return result;
+//	}
+
+    
+    var a = 1; var b = 2; 
+    var test = function (first, second)
+    { 
+    	return first === a && second === b;
+    }
+    console.log(callIt(test, a, b));
+   
+    
+    
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 300px;
+      height: 500px;
+      border: 1px solid red;
+      margin: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content {
+      padding: 5px 18px 5px 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+    }
+
+    .scroll {
+      width: 18px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #eee;
+    }
+
+    .bar {
+      height: 100px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: red;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="box" id="box">
+  <div class="content" id="content">
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头
+    床前明月光啊，明月光，疑是地上霜啊，举头嘿嘿
+ 
+  </div><!--文字内容-->
+  <div id="scroll" class="scroll"><!--装滚动条的层-->
+    <div class="bar" id="bar"></div><!--滚动条-->
+  </div>
+</div>
+<script src="common.js"></script>
+<script>
+// 自制滚动条滑动效果
+//获取元素标签
+		var scroll=my$("scroll");
+		var bar=my$("bar");
+		var content=my$("content");
+		var box=my$("box");
+		
+		//bar 的长度随内容变化而变化 内容越多，长度越短
+		var length=box.offsetHeight/content.offsetHeight*300;
+		bar.style.height=length+"px";
+		//console.log(length);
+		
+		//注册鼠标点击事件
+		scroll.onmousedown=function(e){
+				//定位点击点
+				var y=e.clientY;
+				var reValue=y-bar.offsetTop;
+				document.onmousemove=function(e){
+					 var barY=e.clientY-reValue-box.offsetTop;
+					 var barMax=scroll.offsetHeight-bar.offsetHeight;
+					 
+					//设置barY 范围
+					var barY=barY<=0? 0 : (barY>=barMax? barMax:barY);
+					bar.style.top=barY+"px";
+					//content 内容变化
+					var cscroll=content.offsetHeight*barY/barMax;
+					content.style.top=-cscroll+"px";
+					
+				};
+				document.onmouseup=function(){
+					//清除鼠标移动事件
+					document.onmousemove=null;
+				}
+		};
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link rel="stylesheet" href="css/css(1).css"/>
+		<script src="common1.js"></script>
+	</head>
+	<body>
+		<div class="wrap" id="wrap">
+		  <div class="slide" id="slide">
+		    <ul>
+		      <li><a href="#"><img src="images/slidepic1.jpg" alt=""/></a></li>
+		      <li><a href="#"><img src="images/slidepic2.jpg" alt=""/></a></li>
+		      <li><a href="#"><img src="images/slidepic3.jpg" alt=""/></a></li>
+		      <li><a href="#"><img src="images/slidepic4.jpg" alt=""/></a></li>
+		      <li><a href="#"><img src="images/slidepic5.jpg" alt=""/></a></li>
+		    </ul>
+		    <div class="arrow" id="arrow">
+		      <a href="javascript:;" class="prev" id="arrLeft"></a>
+		      <a href="javascript:;" class="next" id="arrRight"></a>
+		    </div>
+		  </div>
+		</div>
+		
+		<script>
+		 var config = [
+		      {
+		        width: 400,
+		        top: 20,
+		        left: 50,
+		        opacity: 0.2,
+		        zIndex: 2
+		      },//0
+		      {
+		        width: 600,
+		        top: 70,
+		        left: 0,
+		        opacity: 0.8,
+		        zIndex: 3
+		      },//1
+		      {
+		        width: 800,
+		        top: 100,
+		        left: 200,
+		        opacity: 1,
+		        zIndex: 4
+		      },//2
+		      {
+		        width: 600,
+		        top: 70,
+		        left: 600,
+		        opacity: 0.8,
+		        zIndex: 3
+		      },//3
+		      {
+		        width: 400,
+		        top: 20,
+		        left: 750,
+		        opacity: 0.2,
+		        zIndex: 2
+		      }//4
+			];
+			
+			//页面加载事件
+			
+			window.onload=function(){
+				var flag2=true;
+				var list=my$("slide").children[0].children;
+				function assign(){
+					
+					for (var i=0;i<list.length;i++) {
+					//加入一个回调函数  动画结束后  释放标志位，下一次点击可以作用
+					animate(list[i],config[i],function(){
+						flag2=true;
+					});
+					}
+				}
+				assign();
+				
+				my$("slide").onmouseover=function(){
+					//my$("arrow").style.display="block";
+					//渐渐动画显示
+					animate(my$("arrow"),{"opacity":1});
+				}
+				
+				my$("slide").onmouseleave=function(){
+					//my$("arrow").style.display="block";
+					//渐渐动画显示
+					animate(my$("arrow"),{"opacity":0});
+				}
+				
+				my$("arrRight").onclick=function(){
+					if(flag2){
+						//锁住 标志位
+						flag2=false;
+						config.unshift(config.pop());
+						assign();
+					}
+					
+				}
+				my$("arrLeft").onclick=function(){
+					if(flag2){
+						flag2=false;
+						config.push(config.shift());
+						assign();
+					}
+					
+				}
+			
+			}
+			
+			
+			
+		</script>
+		
+	</body>
+</html>
